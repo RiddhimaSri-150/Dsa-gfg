@@ -14,4 +14,8 @@ class smallestpositivemissingnumber {
         }
         return res;
     }
+    public static void main(String[] args){
+        int arr = {-2,-3.-6 , 3, 6 ,9 ,14}
+        public int missingNumber (arr);
+    }
 }
