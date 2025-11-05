@@ -11,4 +11,17 @@ public class Dicerolls{
             dice(p+i, target - i);
         }
     }
+    // Return output as an  ArrayList/
+     static ArrayList<String> DiceRet(String p, int target){
+        if(target == 0){
+            ArrayList<String> ans = new ArrayList<>();
+            ans.add(p);
+            return ans;
+        }
+        ArrayList<String> ans = new ArrayList<>();
+        for (int i = 1; i <= 6 && i<= target ; i++) {
+            ans.addAll(DiceRet(p+i, target - i));
+        }
+        return ans;
+    }
 }
