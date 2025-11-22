@@ -1,4 +1,4 @@
-public class MovesZEroestoEnd{
+public class MovesZErostoEnd {
      static void pushZerosToEnd(int[] arr) {
         int n = arr.length;
         int[] temp = new int[n];
