@@ -1,23 +1,37 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class UnionArrays {
 
     static ArrayList<Integer> Union(int[] a, int[] b){
-        ArrayList< Integer> res = new ArrayList<Integer>();
-        int n1 = a.length;
-        int n2 = b.length;
-        for (int i = 0; i < n1; i++) {
-            if(!res.contains(a[i])){
-                res.add(a[i]);
+        ArrayList<Integer> res = new ArrayList<Integer>();
+
+        for (int j : a) {
+            if (!res.contains(j)) {
+                res.add(j);
             }
         }
-        for (int i = 0; i < n2 ; i++) {
-            if(!res.contains(b[i])){
-                res.add(b[i]);
+        for (int j : b) {
+            if (!res.contains(j)) {
+                res.add(j);
             }
         }
         Collections.sort(res);
         return res;
     }
+    // Using Set
+    static ArrayList<Integer> UnionSet(int[] a, int[] b){
+        Set<Integer> st = new TreeSet<>();
+        for (int j : a) {
+            st.add(j);
+        }
+        for (int j : b) {
+            st.add(j);
+        }
+        return new ArrayList<>(st);
+    }
+    
+
 }
