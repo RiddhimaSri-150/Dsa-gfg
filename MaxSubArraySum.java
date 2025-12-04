@@ -19,4 +19,27 @@ public class MaxSubArraySum{
         }
         return res;
     }
+    // using Kadane's algorithm
+    static int maxSubarraySum1(int[] arr){
+        int n = arr.length;
+        int sum = 0;
+        int maxi = Integer.MIN_VALUE;
+        int ansStart = -1;
+        int ansEnd = -1;
+        int Start = 0;
+        for (int i = 0; i < n ; i++) {
+            if(sum == 0) Start = i;
+
+            sum += arr[i];
+            if(sum > maxi){
+                maxi = sum;
+                ansStart = Start;
+                ansEnd = i;
+            }
+            if(sum < 0){
+                sum = 0;
+            }
+        }
+        return maxi;
+    }
 }
