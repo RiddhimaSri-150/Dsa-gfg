@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Minimizetheheight{
     static int getMinDiff(int[] arr, int k) {
         int n = arr.length;
