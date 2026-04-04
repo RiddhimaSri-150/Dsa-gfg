@@ -18,7 +18,7 @@ public class KidsWithGreatestNumberOfCandies {
         return ans;
     }
 
-    private  int max(int[] arr) {
+    private static int max(int[] arr) {
         int maximim = arr[0];
         for (int i = 0; i < arr.length; i++)
             if (maximim < arr[i + 1]) {
