@@ -3,10 +3,10 @@ import java.util.List;
 public class CountItematchingPairs {
     public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
       int res = 0;
-        for (int i = 0; i < items.size(); i++) {
-            if(ruleKey.equals("type")&&items.get(i).get(0).equals(ruleValue)) res++;
-            if(ruleKey.equals("color")&&items.get(i).get(0).equals(ruleValue)) res++;
-            if(ruleKey.equals("name")&&items.get(i).get(0).equals(ruleValue)) res++;
+        for (List<String> item : items) {
+            if (ruleKey.equals("type") && item.get(0).equals(ruleValue)) res++;
+            if (ruleKey.equals("color") && item.get(0).equals(ruleValue)) res++;
+            if (ruleKey.equals("name") && item.get(0).equals(ruleValue)) res++;
         }
         return res;
     }
