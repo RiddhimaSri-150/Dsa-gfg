@@ -1,28 +1,43 @@
 import java.util.Arrays;
 
 public class SetMatrixZeroes {
-    static int[][] Zero_Matrix(int[][] matrix, int n, int m){
-        int[] col = new int[n];
-        int[] row = new int[m];
-
-        Arrays.fill(col, 0);
-        Arrays.fill(row, 0);
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if(matrix[i][j] ==0){
-                    row[i] = 1;
-                    col[j] = 1;
+    public static void Zero_Matrix(int[][] matrix){
+        int m = matrix.length;
+        int n = matrix[0].length;
+        boolean[] zeroRows = new boolean[m];
+        boolean[] zeroCols = new boolean[n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if(matrix[i][j] == 0){
+                    zeroRows[i] = true;
+                    zeroCols[j] = true;
                 }
-
             }
         }
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if(row[i] ==1 || col[j]==1)
+        for (int i = 0; i < m; i++) {
+            if (zeroRows[i]) {
+                for (int j = 0; j < n; j++) {
                     matrix[i][j] = 0;
-
+                }
             }
         }
-        return matrix;
+        for (int j = 0; j < n; j++) {
+            if (zeroCols[j]) {
+                for (int i = 0; i < m; i++) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+    }
+
+
+
+    public static void main(String[] args) {
+        int[][] arr = {
+                {1,1,1},
+                {1,0,1},
+                {1,1,1}
+        };
+        Zero_Matrix(arr);
     }
 }
