@@ -1,4 +1,4 @@
-public class MaxEquation{
+public class MaxEquatiom{
      public int findMaxValueOfEquation(int[][] points, int k) {
         int n = points.length;
         int max = Integer.MIN_VALUE;
