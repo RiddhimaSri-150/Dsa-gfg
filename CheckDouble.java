@@ -1,0 +1,17 @@
+import java.util.HashSet;
+
+public class CheckDouble {
+    public boolean checkIfExist(int[] arr) {
+        HashSet<Integer> hs = new HashSet<>();
+        for (int num : arr) {
+            if (hs.contains(2 * num) ||
+                    (num % 2 == 0 && hs.contains(num / 2))) {
+                return true;
+            }
+            hs.add(num);
+        }
+
+        return false;
+
+    }
+}
